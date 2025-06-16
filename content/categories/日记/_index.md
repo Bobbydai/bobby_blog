@@ -1,6 +1,6 @@
 ---
-title: Example Category
-description: A description of this category
+title: 日记
+description: 个人的小天地
 image:
 
 # Badge style
