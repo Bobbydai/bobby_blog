@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术 on Bobby's Blog</title><link>https://bobbydai.github.io/bobby_blog/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on Bobby's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 17 Jun 2025 10:54:53 +0800</lastBuildDate><atom:link href="https://bobbydai.github.io/bobby_blog/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>0617 Transformer学习</title><link>https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/</link><pubDate>Tue, 17 Jun 2025 10:54:53 +0800</pubDate><guid>https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/</guid><description>&lt;p>第一遍看下来，感觉大部分是公式和矩阵计算之类的，transformer架构中每一个模块都有不同的计算公式和方法，给人看的懵懵的，不知道学习这个对AI的应用开发帮助是否大，只能说这块的学习是以了解一下，拓宽知识广度为目的。后面需要面试跳槽🐶，或者是工作中有对应需求的情况下再去深入理解。&lt;/p>
+&lt;p>transformer整体流程结构：&lt;/p>
+&lt;p>&lt;img src="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/1.png"
+width="1342"
+height="986"
+srcset="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/1_hu_ff1b7a8ab9c13c3a.png 480w, https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/1_hu_c2c5cafa2c738bd6.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="136"
+data-flex-basis="326px"
+>&lt;/p>
+&lt;p>流程:&lt;/p>
+&lt;p>1.将输入句子中每一个单词的位置embedding和词embeeding相加，组成一个transformer表示矩阵进行输入&lt;/p>
+&lt;p>2.将transformor表示矩阵输入到多个encoder中，最终转换成编码矩阵&lt;/p>
+&lt;p>3.将编码矩阵输入到多个decoder中，decoder会按顺序+mask（遮盖住还未经过decoder的输入矩阵），一行一行的将每个单词进行预测。&lt;/p>
+&lt;p>transformer内部结构&lt;/p>
+&lt;p>&lt;img src="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/2.png"
+width="640"
+height="884"
+srcset="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/2_hu_cf778a5d726bb74.png 480w, https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/2_hu_2b01c8b9d256f388.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="72"
+data-flex-basis="173px"
+>&lt;/p>
+&lt;p>上图是论文中 Transformer 的内部结构图，左侧为 Encoder block，右侧为 Decoder block。红色圈中的部分为 Multi-Head Attention，是由多个 Self-Attention组成的，可以看到 Encoder block 包含一个 Multi-Head Attention，而 Decoder block 包含两个 Multi-Head Attention (其中有一个用到 Masked)。Multi-Head Attention 上方还包括一个 Add &amp;amp; Norm 层，Add 表示残差连接 (Residual Connection) 用于防止网络退化，Norm 表示 Layer Normalization，用于对每一层的激活值进行归一化。&lt;/p>
+&lt;p>self-attention 结构&lt;/p>
+&lt;p>&lt;img src="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/3.png"
+width="406"
+height="488"
+srcset="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/3_hu_54f2f6d1ca747786.png 480w, https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/3_hu_44babde796d48fc5.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="83"
+data-flex-basis="199px"
+>&lt;/p>
+&lt;p>计算的的时候需要用到Q,K,V
+本质上就是基于上面输入的transformer向量X做矩阵变换&lt;/p>
+&lt;p>得到Q,K,V之后用下面的公式进行计算
+&lt;img src="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/4.png"
+width="1410"
+height="1328"
+srcset="https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/4_hu_332d74df5fb75184.png 480w, https://bobbydai.github.io/bobby_blog/p/0617-transformer%E5%AD%A6%E4%B9%A0/4_hu_bda8c866b9ebaab7.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="106"
+data-flex-basis="254px"
+>&lt;/p></description></item></channel></rss>
